@@ -2,6 +2,12 @@ import React from "react";
 import { Container, Row, Col } from "react-bootstrap";
 import Moment from 'moment';
 // var moment = require('moment');
+import fog from '../assets/images/fog.png';
+import haze from '../assets/images/haze.png';
+import hotWeather from '../assets/images/hot-weather.png';
+import therm from '../assets/images/thermometer.png';
+import rainy from '../assets/images/rainy-day.png';
+import cloudy from '../assets/images/cloudy.png'
 
 function Window(props){
     const day = props.day;
@@ -32,36 +38,64 @@ function Window(props){
         winColor = '#CC5500,#F2D8A7'
     }   
 
+        let main = day.weather[0].main;
+    function renderIcon(main){
+        switch(main){
+            case'Mist':
+                return haze;//"https://www.flaticon.com/free-icons/haze";
+            case'Rain':
+                return rainy;//"https://www.flaticon.com/free-icons/rainy-day";
+            case'Sunny':
+                return hotWeather;//"https://www.flaticon.com/free-icons/hot-weather";
+            case 'Clouds':
+                return cloudy;
+            default:
+                return therm;//"rc\assets\images\thermometer.png";
+            }
+    }
+    let icon = renderIcon(main);
+
     return(
-        <Container fluid className={winClass} style={{backgroundImage: 'linear-gradient(to right,'+winColor+')'}}>
-                    <div className="p-3">
-                        <small>
-                            Feels Like:
-                        </small>
-                        <h2>
-                            {day.feels_like.day}
-                        </h2>
-                        <div>
-                            <Row>
-                                <h3>{dateDay}</h3>
-                                <h4>{dateFormatted}</h4>
-                            </Row>
-                            <Row>
-                                <Col xs={6} xl={6}>
-                                    Day: <br/>
-                                    Night: <br/>
-                                    Max: <br/>
-                                    Min: <br/>                                    
-                                </Col>
-                                <Col xs={6} xl={6}>
-                                    {day.temp.day} <br/>
-                                    {day.temp.night}<br/>
-                                    {day.temp.max}<br/>
-                                    {day.temp.min}<br/>
-                                </Col>
-                            </Row>
-                        </div>
-                    </div>
+        // <Container fluid className={winClass} style={{backgroundImage: 'linear-gradient(to right,'+winColor+')'}}>
+        //             <div className="p-3">
+        //                 <small>
+        //                     Feels Like:
+        //                 </small>
+        //                 <h2>
+        //                     {day.feels_like.day}
+        //                 </h2>
+        //                 <div>
+        //                     <Row>
+        //                         <h3>{dateDay}</h3>
+        //                         <h4>{dateFormatted}</h4>
+        //                     </Row>
+        //                     <Row>
+        //                         <Col xs={6} xl={6}>
+        //                             Day: <br/>
+        //                             Night: <br/>
+        //                             Max: <br/>
+        //                             Min: <br/>                                    
+        //                         </Col>
+        //                         <Col xs={6} xl={6}>
+        //                             {day.temp.day} <br/>
+        //                             {day.temp.night}<br/>
+        //                             {day.temp.max}<br/>
+        //                             {day.temp.min}<br/>
+        //                         </Col>
+        //                     </Row>
+        //                 </div>
+        //             </div>
+        // </Container>
+        <Container>
+            <Row>
+              <img src={icon} />
+            </Row>
+            <Row>
+                <h4>{day.feels_like.day}</h4>
+            </Row>
+            <Row>
+                <h5>{dateDay} {dateFormatted}</h5>
+            </Row>
         </Container>
     )
 }
