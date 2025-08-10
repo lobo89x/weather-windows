@@ -5,7 +5,7 @@ import Pane from './components/week-pane';
 function App() {
   return (
     <div className="App">
-      <Pane />
+      <Pane style={{ height: '100%'}}/>
     </div>
   );
 }
