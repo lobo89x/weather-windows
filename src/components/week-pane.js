@@ -22,6 +22,7 @@ class Pane extends Component {
         //https://api.openweathermap.org/data/3.0/onecall/day_summary?lat={lat}&lon={lon}&date={date}&appid={API key}
         axios.get('https://api.openweathermap.org/data/3.0/onecall?lat=33.74&lon=-84.39&appid='+APIkey+'&units=imperial')
             .then((res) => {
+                console.log(res.data);
                 this.setState({
                     days: res.data.daily,
                     current: res.data.current
@@ -54,10 +55,9 @@ class Pane extends Component {
 
     render(){
         return (
-            <Container fluid style={{backgroundImage: 'linear-gradient(to right,'+this.rendBckg(this.state.current.temp)+')'}}>
+            <Container fluid style={{backgroundImage: 'linear-gradient(to right,'+this.rendBckg(this.state.current.temp)+')', minHeight: '100%'}}>
                 <Row className="p-1">
                     <Col className="today">
-                    {this.rendBckg(this.state.current.temp)} {this.state.current.temp}
                         <Today current={this.state.current} />
                     </Col>
                 </Row>

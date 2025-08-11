@@ -40,30 +40,33 @@ function Today(props){
     Moment.locale('en');
     const dateFormatted = Moment(date).format("DD.MMM.yyyy");
     const dateDay = Moment(date).format("ddd");
-    console.log(weather);
-    //current.weather[0].description
+
     return(
         <Container fluid className={main}>
             <Row>
-                <Col>
+                <Col xs={6} med={6} lg={6}>
                     <div className="p-3">
-                        <h3>{weather.description}</h3>
-                        <h4>{dateDay}</h4>
+                        <h2>{dateDay}</h2>
                         <h5>{dateFormatted}</h5>
                     </div>
                     <Row>
                         <Col>
-                            <h1 style={{fontSize: '10vh'}}>
+                            <h1 style={{fontSize: '15vw'}}>
                                 {today.temp}
                             </h1>
+                            <h3>{weather.description}</h3>
                         </Col>
                     </Row>
                 </Col>
                 <Col>
-                    <img src={icon} />
-                    <small>
-                        <a href="https://www.flaticon.com/free-icons/weather" title="weather icons">Weather icons created by lutfix - Flaticon</a>
-                    </small>
+                    <Row>
+                        <img src={icon} style={{ width: '90%'}}/>
+                    </Row>
+                    <Row>
+                        <small className="iconCredit">
+                            <a href="https://www.flaticon.com/free-icons/weather" title="weather icons">Weather icons created by lutfix - Flaticon</a>
+                        </small>
+                    </Row>
                 </Col>
             </Row>
         </Container>

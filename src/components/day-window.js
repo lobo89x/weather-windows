@@ -89,12 +89,14 @@ function Window(props){
         <Container>
             <Row>
               <img src={icon} />
+              <h7>{day.weather[0].description}</h7>
             </Row>
             <Row>
-                <h4>{day.feels_like.day}</h4>
+                <h3>{day.feels_like.day}</h3>
             </Row>
             <Row>
-                <h5>{dateDay} {dateFormatted}</h5>
+                <h5>{dateDay}</h5>
+                <h6>{dateFormatted}</h6>
             </Row>
         </Container>
     )
