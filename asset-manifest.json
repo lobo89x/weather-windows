@@ -1,20 +1,21 @@
 {
   "files": {
     "main.css": "/weather-windows/static/css/main.ae2b5168.css",
-    "main.js": "/weather-windows/static/js/main.dd483678.js",
+    "main.js": "/weather-windows/static/js/main.b8f67618.js",
     "static/js/488.a34a998f.chunk.js": "/weather-windows/static/js/488.a34a998f.chunk.js",
     "static/media/hot-weather.png": "/weather-windows/static/media/hot-weather.b612bfabe2c5fb466646.png",
+    "static/media/sun.png": "/weather-windows/static/media/sun.6e883cace944129a70ad.png",
     "static/media/cloudy.png": "/weather-windows/static/media/cloudy.88eb837f7778faf95d03.png",
     "static/media/thermometer.png": "/weather-windows/static/media/thermometer.a3b5f4c33bbf6e1e37ee.png",
     "static/media/rainy-day.png": "/weather-windows/static/media/rainy-day.1f8ebe277e04970c3d65.png",
     "static/media/logo.svg": "/weather-windows/static/media/logo.6ce24c58023cc2f8fd88fe9d219db6c6.svg",
     "index.html": "/weather-windows/index.html",
     "main.ae2b5168.css.map": "/weather-windows/static/css/main.ae2b5168.css.map",
-    "main.dd483678.js.map": "/weather-windows/static/js/main.dd483678.js.map",
+    "main.b8f67618.js.map": "/weather-windows/static/js/main.b8f67618.js.map",
     "488.a34a998f.chunk.js.map": "/weather-windows/static/js/488.a34a998f.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.ae2b5168.css",
-    "static/js/main.dd483678.js"
+    "static/js/main.b8f67618.js"
   ]
 }
